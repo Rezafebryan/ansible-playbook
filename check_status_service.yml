@@ -1,0 +1,10 @@
+- hosts: all
+  remote_user: ubuntu
+  tasks:
+    - name: Check status service
+        command: systemctl status {{ item  }}
+           with_item:
+                - tomcat
+                - nginx
+                - mysql
+      become: yes
