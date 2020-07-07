@@ -1,0 +1,8 @@
+- hosts: core
+  sudo: yes
+  tasks:
+    - name: syncronize file from ansible server to ansible client
+      synchronize:
+        src: /$HOME/folder
+        dest: /$HOME/
+        archive: no
